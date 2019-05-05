@@ -2,13 +2,14 @@ import React from 'react';
 import { Airplane } from './components/Airplane';
 
 import { AirplaneLayoutProvider } from './context/AirplaneLayout';
+import { SeatContextProvider } from './context/SeatContext';
 
-function App() {
+export default () => {
   return (
-    <AirplaneLayoutProvider>
-      <Airplane />
-    </AirplaneLayoutProvider>
+    <SeatContextProvider>
+      <AirplaneLayoutProvider>
+        <Airplane />
+      </AirplaneLayoutProvider>
+    </SeatContextProvider>
   );
-}
-
-export default App;
+};

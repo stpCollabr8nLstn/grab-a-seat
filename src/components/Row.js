@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Aisle from './Aisle';
 import AvailableSeat from './AvailableSeat';
 import UnavailableSeat from './UnavailableSeat';
-import { color, seatStyle } from '../theme';
 
 const StyledRow = styled.div`
   display: flex;
@@ -14,18 +13,23 @@ const StyledRow = styled.div`
 const Row = ({ rowData }) => {
   return (
     <StyledRow>
-      {rowData.map(s =>
+      {rowData.map(s => (
         <React.Fragment key={s.row + s.seat}>
-          {s.aisle ? <Aisle>{s.row}</Aisle> :
+          {s.aisle ? (
+            <Aisle>{s.row}</Aisle>
+          ) : (
             <React.Fragment>
-              {s.occupied ? <UnavailableSeat /> : <AvailableSeat />}
+              {s.occupied ? (
+                <UnavailableSeat />
+              ) : (
+                <AvailableSeat seatInfo={{ seat: s.seat, row: s.row, class: s.class }} />
+              )}
             </React.Fragment>
-          }
-
+          )}
         </React.Fragment>
-      )}
+      ))}
     </StyledRow>
-  )
-}
+  );
+};
 
-export default Row
+export default Row;

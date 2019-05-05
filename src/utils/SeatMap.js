@@ -27,35 +27,38 @@ export const seatSort = (a, b) => {
   return 0;
 };
 
+export const compareSeat = (seatA, seatB) => {
+  if (seatA.class === seatB.class) {
+    if (seatA.row === seatB.row) {
+      if (seatA.seat === seatB.seat) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
 export const prepareRow = (row, aisleType, rowNum) => {
-  if (aisleType === 'first') {
-    return row.splice(2, 0, { row: rowNum, aisle: true });
-  }
-
-  if (aisleType === 'business') {
-    return row.splice(3, 0, { row: rowNum, aisle: true });
-  }
-
-  if (aisleType === 'economy') {
-    return row
-      .splice(2, 0, { row: rowNum, aisle: true })
-      .splice(5, 0, { row: rowNum, aisle: true });
-  }
-
-  return row;
+  const { aisleLocation } = cabinLayout[aisleType];
+  return aisleLocation.forEach(aisle =>
+    row.splice(aisle, 0, { row: rowNum, aisle: true, seat: `row-aisle-${aisle}` })
+  );
 };
 
 export const cabinLayout = {
   first: {
     rowMax: 10,
-    startingRow: 1
+    startingRow: 1,
+    aisleLocation: [2]
   },
   business: {
     rowMax: 15,
-    startingRow: 11
+    startingRow: 11,
+    aisleLocation: [3]
   },
   economy: {
     rowMax: 45,
-    startingRow: 16
+    startingRow: 16,
+    aisleLocation: [2, 6]
   }
 };
