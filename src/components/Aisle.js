@@ -1,13 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color, seatStyle } from '../theme';
+import { seatStyle, textStyle } from '../theme/vars';
 
 const StyledAisle = styled.div`
   ${seatStyle};
-  background: transparent;
-  border: none;
-  font-size: 16px;
-  color: ${color.textGray};
+  ${textStyle};
 `;
 
 const Aisle = ({ children }) => {

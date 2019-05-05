@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { SeatContext } from '../context/SeatContext';
 import { compareSeat } from '../utils/SeatMap';
-import { color, seatStyle } from '../theme';
+import { color, seatStyle } from '../theme/vars';
 
 const StyledSeat = styled.button`
   ${seatStyle};
-  background: ${props => (props.selected ? color.accent01 : color.primary)};
+  background: ${props => (props.selected ? color.secondary : color.accent01)};
   :focus {
     outline: none;
-    border: 1px solid ${color.accent02};
+    border: 1px solid ${color.primary};
   }
 `;
 

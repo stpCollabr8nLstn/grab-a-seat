@@ -1,6 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import { getSeatMap, seatSort } from '../utils/SeatMap';
 import { Group } from './Group';
+
+const StyledAirplane = styled.div`
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
+`;
 
 class Airplane extends React.Component {
   state = {
@@ -21,11 +31,11 @@ class Airplane extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <StyledAirplane>
         <Group seatData={this.getClassSeatMap('First')} group="first" />
         <Group seatData={this.getClassSeatMap('Business')} group="business" />
         <Group seatData={this.getClassSeatMap('Economy')} group="economy" />
-      </React.Fragment>
+      </StyledAirplane>
     );
   }
 }

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, seatStyle } from '../theme';
+import { color, seatStyle } from '../theme/vars';
 
 const UnavailableSeat = styled.span`
   ${seatStyle};
@@ -8,4 +8,4 @@ const UnavailableSeat = styled.span`
   cursor: not-allowed;
 `;
 
-export default UnavailableSeat
+export default UnavailableSeat;

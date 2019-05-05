@@ -41,7 +41,7 @@ export const compareSeat = (seatA, seatB) => {
 export const prepareRow = (row, aisleType, rowNum) => {
   const { aisleLocation } = cabinLayout[aisleType];
   return aisleLocation.forEach(aisle =>
-    row.splice(aisle, 0, { row: rowNum, aisle: true, seat: `row-aisle-${aisle}` })
+    row.splice(aisle, 0, { row: rowNum, aisle: true, seat: `RA${aisle}` })
   );
 };
 
@@ -59,6 +59,6 @@ export const cabinLayout = {
   economy: {
     rowMax: 45,
     startingRow: 16,
-    aisleLocation: [2, 6]
+    aisleLocation: [2, 7]
   }
 };
