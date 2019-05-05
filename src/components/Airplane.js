@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { getSeatMap, seatSort } from '../utils/SeatMap';
-import { BusinessClass } from './BusinessClass';
-import { FirstClass } from './FirstClass';
-import { Economy } from './Economy';
+import { Group } from './Group';
 
 class Airplane extends React.Component {
   state = {
@@ -25,9 +23,9 @@ class Airplane extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <FirstClass seatData={this.getClassSeatMap('First')} />
-        <BusinessClass seatData={this.getClassSeatMap('Business')} />
-        <Economy seatData={this.getClassSeatMap('Economy')} />
+        <Group seatData={this.getClassSeatMap('First')} group='first' />
+        <Group seatData={this.getClassSeatMap('Business')} group='business' />
+        <Group seatData={this.getClassSeatMap('Economy')} group='economy' />
       </React.Fragment>
     )
   }

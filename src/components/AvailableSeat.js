@@ -4,18 +4,17 @@ import { color, seatStyle } from '../theme';
 
 const StyledSeat = styled.button`
   ${seatStyle};
-  background: ${props => props.selected ? color.accent01 : color.primary};
+  background: ${props => (props.selected ? color.accent01 : color.primary)};
   :focus {
     outline: none;
     border: 1px solid ${color.accent02};
   }
 `;
 
+// Check out this handy use of hooks! 🦄
 const AvailableSeat = () => {
   const [selected, toggleSelected] = useState(false);
-  return (
-    <StyledSeat selected={selected} onClick={() => toggleSelected(!selected)} />
-  )
-}
+  return <StyledSeat selected={selected} onClick={() => toggleSelected(!selected)} />;
+};
 
-export default AvailableSeat
+export default AvailableSeat;

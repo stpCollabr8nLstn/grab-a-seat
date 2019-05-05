@@ -1,10 +1,10 @@
 {
-    "plugins": [
-        [
-            "babel-plugin-styled-components",
-            {
-                "displayName": false
-            }
-        ]
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "displayName": true
+      }
     ]
+  ]
 }

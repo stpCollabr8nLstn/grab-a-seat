@@ -6,10 +6,11 @@ export const color = {
   white: '#FFF',
   lightGray: '#A5A6A7',
   textGray: '#48494A'
-}
+};
 
 export const seatStyle = {
   height: '24px',
   width: '24px',
-  borderRadius: '4px',
-}
+  borderRadius: '2px',
+  margin: '4px 8px'
+};
