@@ -1,6 +1,6 @@
 export const seatMapUrl = 'https://s3.amazonaws.com/frontend-candidate-homework.lola.co/seats.json';
 
-export async function getSeatMap() {
+export const getSeatMap = async () => {
   const res = await fetch(seatMapUrl, {
     method: 'get'
   });
@@ -9,7 +9,12 @@ export async function getSeatMap() {
   if (res.ok && data.length) {
     return data;
   }
-}
+};
+
+export const updateSeatMap = () => {
+  // TODO: Add fetch with post assuming I know what the API requires
+  // For now just save in localStorage
+};
 
 export const seatSort = (a, b) => {
   if (a.row < b.row) {

@@ -25,7 +25,7 @@ export const Group = ({ seatData, group }) => {
     <React.Fragment>
       <GroupLegend>
         {rowList.map(seat =>
-          seat.length === 1 ? <SeatLegend>{seat}</SeatLegend> : <SeatLegend />
+          seat.length === 1 ? <SeatLegend key={seat}>{seat}</SeatLegend> : <SeatLegend key={seat} />
         )}
       </GroupLegend>
 

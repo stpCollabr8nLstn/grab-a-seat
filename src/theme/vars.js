@@ -9,18 +9,27 @@ export const color = {
 };
 
 export const seatStyle = {
-  height: '24px',
-  width: '24px',
+  height: '18px',
+  width: '18px',
   boxSizing: 'border-box',
   borderRadius: '2px',
   margin: '4px 8px',
-  border: '1px solid transparent'
+  border: '2px solid transparent'
+};
+
+export const seatStyleLg = {
+  height: '24px',
+  width: '24px'
 };
 
 export const textStyle = {
   background: 'transparent',
   border: 'none',
-  fontSize: '16px',
+  fontSize: '14px',
   color: color.textGray,
   textAlign: 'center'
+};
+
+export const textStyleLg = {
+  fontSize: '16px'
 };

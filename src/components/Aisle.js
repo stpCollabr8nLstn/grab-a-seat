@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { seatStyle, textStyle } from '../theme/vars';
+import { seatStyle, seatStyleLg, textStyle, textStyleLg } from '../theme/vars';
 
 const StyledAisle = styled.div`
   ${seatStyle};
   ${textStyle};
+
+  @media screen and (min-width: 500px) {
+    ${seatStyleLg};
+    ${textStyleLg};
+  }
 `;
 
 const Aisle = ({ children }) => {
