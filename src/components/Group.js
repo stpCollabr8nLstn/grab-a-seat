@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
-import { AirplaneLayout } from '../context/AirplaneLayout';
+import { SeatContext } from '../context/SeatContext';
 import Row from './Row';
 import { GroupLegend, SeatLegend } from './Legend';
 import { prepareRow } from '../utils/SeatMap';
 
 export const Group = ({ seatData, group }) => {
+  const [state] = useContext(SeatContext);
+  const { cabinLayout } = state;
   const {
     [group]: { rowMax, startingRow }
-  } = useContext(AirplaneLayout);
+  } = cabinLayout;
 
   // Create an object of arrays {[row1: [seats], [row2: [seats]], ...]}
   // and define the identifier row at the top of the group
