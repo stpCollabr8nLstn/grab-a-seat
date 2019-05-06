@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getSeatMap, seatSort } from '../utils/SeatMap';
+import { getSeatMap, seatSort, getClassData } from '../utils/SeatMap';
 import { Group } from './Group';
 
 const StyledAirplane = styled.div`
@@ -30,11 +30,12 @@ class Airplane extends React.Component {
   }
 
   render() {
+    const { seatMap } = this.state;
     return (
       <StyledAirplane>
-        <Group seatData={this.getClassSeatMap('First')} group="first" />
-        <Group seatData={this.getClassSeatMap('Business')} group="business" />
-        <Group seatData={this.getClassSeatMap('Economy')} group="economy" />
+        <Group seatData={getClassData(seatMap, 'First')} group="first" />
+        <Group seatData={getClassData(seatMap, 'Business')} group="business" />
+        <Group seatData={getClassData(seatMap, 'Economy')} group="economy" />
       </StyledAirplane>
     );
   }

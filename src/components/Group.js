@@ -10,6 +10,7 @@ export const Group = ({ seatData, group }) => {
   const {
     [group]: { rowMax, startingRow }
   } = cabinLayout;
+  const { aisleLocation } = cabinLayout[group];
 
   // Create an object of arrays {[row1: [seats], [row2: [seats]], ...]}
   // and define the identifier row at the top of the group
@@ -17,7 +18,7 @@ export const Group = ({ seatData, group }) => {
   let rowList = [];
   for (let i = startingRow; i <= rowMax; i++) {
     rowsArr[`row${i}`] = seatData.filter(s => s.row === i);
-    prepareRow(rowsArr[`row${i}`], group, i);
+    prepareRow(rowsArr[`row${i}`], aisleLocation, i);
     if (i === startingRow) {
       rowsArr[`row${i}`].map(r => rowList.push(r.seat));
     }
