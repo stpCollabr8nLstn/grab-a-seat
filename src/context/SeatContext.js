@@ -7,7 +7,7 @@ export const SeatContextProvider = ({ children }) => {
     selectedSeat: { row: '', seat: '', class: '' },
     cabinLayout: {
       first: {
-        rowMax: 0,
+        rowMax: 10,
         startingRow: 1,
         aisleLocation: [2]
       },
