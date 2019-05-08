@@ -3,7 +3,7 @@
 ### Howdy!
 
 This application is a simple interactive seatmap
-To view a working example checkout out this handy surge hosted version: [Grab a Seat](http://graceful-limit.surge.sh/)
+To view a working example checkout out the live site here: [Grab a Seat](https://stpcollabr8nlstn.github.io/grab-a-seat/)
 
 ## To run locally
 
