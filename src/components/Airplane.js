@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getSeatMap, seatSort, getClassData } from '../utils/SeatMap';
+import { getSeatMap, getClassData } from '../utils/SeatMap';
 import { Group } from './Group';
 
 const StyledAirplane = styled.div`
@@ -14,7 +14,8 @@ const StyledAirplane = styled.div`
 
 class Airplane extends React.Component {
   state = {
-    seatMap: []
+    seatMap: [],
+    cabinClasses: ['First', 'Business', 'Economy']
   };
 
   async componentDidMount() {
@@ -24,21 +25,15 @@ class Airplane extends React.Component {
     });
   }
 
-  getClassSeatMap(group) {
-    const { seatMap } = this.state;
-    return seatMap.filter(s => s.class === group).sort(seatSort);
-  }
-
   render() {
-    const { seatMap } = this.state;
+    const { seatMap, cabinClasses } = this.state;
     return (
       <StyledAirplane>
-        <Group seatData={getClassData(seatMap, 'First')} group="first" />
-        <Group seatData={getClassData(seatMap, 'Business')} group="business" />
-        <Group seatData={getClassData(seatMap, 'Economy')} group="economy" />
+        {cabinClasses.map(c => (
+          <Group key={c} seatData={getClassData(seatMap, c)} />
+        ))}
       </StyledAirplane>
     );
   }
 }
-
 export { Airplane };
