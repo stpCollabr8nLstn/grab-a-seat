@@ -84,12 +84,28 @@ export const getCabinSeats = cabinRow => {
   return [...new Set(cabinRow.map(r => r.seat))];
 };
 
-export const addAisles = cabinSeats => {
+export const getAisles = cabinSeats => {
   const control = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
   let aisles = [];
   for (var i = 0; i < cabinSeats.length; i++) {
     if (cabinSeats.indexOf(control[i]) === -1) {
-      aisles.push(control[i]);
+      aisles.push(i);
     }
   }
+  return aisles;
+};
+
+// Create an object of arrays {[row1: [seats], [row2: [seats]], ...]}
+// and define the identifier row at the top of the group
+export const defineRows = (seatData, rowMax, startingRow, aisleLocation) => {
+  const rowsArr = {};
+  let rowList = [];
+  for (let i = startingRow; i < rowMax; i++) {
+    rowsArr[`row${i}`] = getRowData(seatData, i);
+    prepareRow(rowsArr[`row${i}`], aisleLocation, i);
+    if (i === startingRow) {
+      rowsArr[`row${i}`].map(r => rowList.push(r.seat));
+    }
+  }
+  return { rowsArr, rowList };
 };
