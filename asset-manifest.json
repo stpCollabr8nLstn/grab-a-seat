@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/grab-a-seat/static/js/main.ed5d56e3.chunk.js",
+    "main.js.map": "/grab-a-seat/static/js/main.ed5d56e3.chunk.js.map",
+    "runtime~main.js": "/grab-a-seat/static/js/runtime~main.80d0a47c.js",
+    "runtime~main.js.map": "/grab-a-seat/static/js/runtime~main.80d0a47c.js.map",
+    "static/js/2.a1b3e546.chunk.js": "/grab-a-seat/static/js/2.a1b3e546.chunk.js",
+    "static/js/2.a1b3e546.chunk.js.map": "/grab-a-seat/static/js/2.a1b3e546.chunk.js.map",
+    "index.html": "/grab-a-seat/index.html",
+    "precache-manifest.6a406643ae2cf2384544b449f2f487e1.js": "/grab-a-seat/precache-manifest.6a406643ae2cf2384544b449f2f487e1.js",
+    "service-worker.js": "/grab-a-seat/service-worker.js"
+  }
+}
